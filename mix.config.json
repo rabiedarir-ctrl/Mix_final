@@ -1,0 +1,43 @@
+{
+  "platform": "Mix",
+  "version": "1.0.0",
+  "device_mode": "mobile",
+  "entry_code": "MIX-001",
+  "storage_path": "/storage/emulated/0/Mix/storage",
+  "self_heal": true,
+  "modules": {
+    "social": true,
+    "store": true,
+    "wallet": true,
+    "games": true,
+    "metaverse": true,
+    "matrix": true,
+    "gps": true,
+    "ai": true,
+    "tv_radio": true
+  },
+  "network": {
+    "backend_url": "http://localhost:3000",
+    "update_interval_sec": 300
+  },
+  "permissions": {
+    "allow_guest": false,
+    "require_auth": true,
+    "enable_gps_tracking": true
+  },
+  "ui": {
+    "theme": "dark",
+    "language": "en",
+    "pwa_enabled": true
+  },
+  "logging": {
+    "enable_logs": true,
+    "log_path": "/storage/emulated/0/Mix/storage/logs",
+    "max_file_size_mb": 10
+  },
+  "security": {
+    "enable_ssl": false,
+    "allowed_origins": ["*"],
+    "cors_enabled": true
+  }
+}
