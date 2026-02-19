@@ -1,0 +1,58 @@
+Mix_Final/
+│
+├── README.md                     # شرح المشروع + طريقة التشغيل
+├── LICENSE                        # رخصة المشروع (MIT / Apache 2.0)
+├── mix.config.json                # الإعدادات المركزية + Self-Heal + Modules
+│
+├── backend/                       # الخادم الرئيسي
+│   ├── server.js                  # Mix + Matrix backend
+│   ├── package.json               # اعتمادات Node.js
+│   ├── core/                      # أساسي
+│   │   ├── memory.py              # تحميل mix.config.json
+│   │   ├── auth.py                # التحقق من JWT / Entry
+│   │   └── self_heal.py           # إصلاح تلقائي للأخطاء
+│   │
+│   ├── api/
+│   │   ├── health.py              # فحص المنصة
+│   │   └── upload.py              # رفع / تحقق الملفات
+│   │
+│   └── modules/
+│       ├── gps/                   # GPS + GeoFence
+│       │   ├── gps_manager.py
+│       │   ├── consent_manager.py
+│       │   ├── geofence.py
+│       │   └── emergency.py
+│       │
+│       ├── wallet/                # إدارة العملة الرقمية / المدفوعات
+│       │   ├── wallet_manager.py
+│       │   └── transactions.py
+│       │
+│       ├── ai/                    # الذكاء الاصطناعي والتحليلات
+│       │   ├── ai_core.py
+│       │   └── ai_alerts.py
+│       │
+│       └── matrix/                # نظام المحادثة / التعاون
+│           ├── matrixClient.js
+│           └── rooms.js
+│
+├── frontend/                       # واجهة المستخدم (PWA + Metaverse)
+│   ├── index.html                  # الصفحة الرئيسية
+│   ├── world.html                  # عالم Metaverse
+│   ├── manifest.json               # PWA Config
+│   ├── service-worker.js           # دعم Offline
+│   └── static/
+│       ├── main.js                 # تفاعل المستخدم + Matrix + Metaverse
+│       └── style.css               # CSS
+│
+├── storage/                        # تخزين محلي على الهاتف / cache
+│   ├── data.json                   # بيانات Mix العامة
+│   ├── chairs.json                 # بيانات تجريبية
+│   ├── logs/                       # سجلات التشغيل
+│   └── cache/                      # بيانات مؤقتة
+│
+├── scripts/                        # أدوات مساعدة
+│   ├── start.sh                    # تشغيل مباشر للخادم
+│   └── check.sh                    # تحقق من ملفات المشروع والهيكل
+│
+└── logs/
+    └── system.log                  # سجل الأخطاء العام
